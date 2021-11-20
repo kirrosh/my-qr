@@ -6,7 +6,7 @@ import { App } from 'tailwind-mobile/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <App theme="ios">
+        <App theme="ios" dark>
             <Component {...pageProps} />
         </App>
     );
