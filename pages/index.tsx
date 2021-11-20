@@ -6,13 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import React, { useState } from 'react';
-import { Page, Navbar, Block, List, Button, Popup, Link, ListInput } from 'tailwind-mobile/react';
+import { Page, Navbar, Block, List, Button, Popup, Link, ListInput, Fab } from 'tailwind-mobile/react';
 import QRCodeFileUpload from '../features/QRCodeFileUpload';
 import CodeContent from '../features/CodeContent';
 import AddCode from '../features/AddCode';
 import { useAtom } from 'jotai';
 import { addCodeAtom, showAddCodeAtom } from '../features/atoms';
 import { v4 } from 'uuid';
+import { MdAdd } from 'react-icons/md';
 
 const Placeholder: React.FC = ({ children }) => {
     return <div className=" m-5">{children}</div>;
@@ -51,12 +52,13 @@ const Home: NextPage = () => {
                             <CodeContent src={code.src} title={code.title} />
                         </SwiperSlide>
                     ))}
-
-                    <SwiperSlide className="grid place-items-center">
-                        <AddCode />
-                    </SwiperSlide>
                 </Swiper>
             </Block>
+            <Fab
+                className="fixed left-1/2 bottom-4-safe transform -translate-x-1/2 z-20"
+                icon={<MdAdd />}
+                onClick={() => setPopupOpened(true)}
+            />
             <Popup opened={popupOpened} onBackdropClick={() => setPopupOpened(false)}>
                 <Page>
                     <Navbar
