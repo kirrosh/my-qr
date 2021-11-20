@@ -46,7 +46,7 @@ const FormPopup = () => {
         <Popup opened={popupOpened} onBackdropClick={() => setPopupOpened(false)}>
             <Page>
                 <Navbar
-                    title="Add QR"
+                    title="QR"
                     right={
                         <Link navbar onClick={() => setPopupOpened(false)}>
                             Close

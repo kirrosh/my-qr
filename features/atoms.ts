@@ -7,7 +7,10 @@ export type ICode = {
     src: string;
 };
 // Popup form atoms
-export const showCodeFormAtom = atom(false);
+export const showCodeFormAtom = atom(false, (get, set, value: boolean) => {
+    set(codeInFormAtom, undefined);
+    set(showCodeFormAtom, value);
+});
 export const codeInFormAtom = atom<Partial<ICode> | undefined>(undefined);
 export const setTitleAtom = atom(
     (get) => get(codeInFormAtom)?.title || '',
