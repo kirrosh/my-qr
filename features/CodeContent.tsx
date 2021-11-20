@@ -3,7 +3,7 @@ import QRCode from 'qrcode.react';
 import { Button } from 'tailwind-mobile/react';
 import { MdDelete, MdModeEdit } from 'react-icons/md';
 import { useAtom } from 'jotai';
-import { deleteCodeAtom } from './atoms';
+import { codeInFormAtom, deleteCodeAtom, showCodeFormAtom } from './atoms';
 
 type Props = {
     src: string;
@@ -12,6 +12,16 @@ type Props = {
 };
 const CodeContent = ({ src, title, id }: Props) => {
     const [_, deleteCode] = useAtom(deleteCodeAtom);
+    const [__, setCodeInForm] = useAtom(codeInFormAtom);
+    const [___, setPopupOpened] = useAtom(showCodeFormAtom);
+    const onEditClick = () => {
+        setPopupOpened(true);
+        setCodeInForm({
+            src,
+            title,
+            id
+        });
+    };
     return (
         <div className="w-8/12 grid place-items-center">
             <div className="grid p-4 gap-4 rounded-md">
@@ -37,7 +47,7 @@ const CodeContent = ({ src, title, id }: Props) => {
                     >
                         <MdDelete />
                     </Button>
-                    <Button>
+                    <Button onClick={onEditClick}>
                         <MdModeEdit />
                     </Button>
                 </div>
