@@ -5,7 +5,17 @@ module.exports = tailwindMobile({
     purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {}
+        extend: {
+            colors: {
+                'page-ios-light': '#fff',
+                'page-ios-dark': '#000',
+                primary: {
+                    light: '#4361ee',
+                    DEFAULT: '#4361ee',
+                    dark: '#4361ee'
+                }
+            }
+        }
     },
     variants: {
         extend: {}
