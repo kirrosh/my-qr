@@ -3,6 +3,8 @@ import type { NextPage } from 'next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
+import 'swiper/css/pagination';
+
 import React from 'react';
 import { Page, Fab } from 'tailwind-mobile/react';
 import CodeContent from '../features/CodeContent';
@@ -11,6 +13,7 @@ import { savedCodesAtom, showCodeFormAtom } from '../features/atoms';
 import { MdAdd } from 'react-icons/md';
 import FormPopup from '../features/FormPopup';
 import MetaData from '../features/MetaData';
+import { Pagination } from 'swiper';
 
 const Home: NextPage = () => {
     const [popupOpened, setPopupOpened] = useAtom(showCodeFormAtom);
@@ -21,10 +24,11 @@ const Home: NextPage = () => {
             <FormPopup />
             <MetaData />
 
-            <div className="w-full h-full">
+            <div className="w-full h-full grid place-items-center">
                 <Swiper
-                    className="w-full h-full"
-                    spaceBetween={50}
+                    modules={[Pagination]}
+                    pagination={{ clickable: true }}
+                    className="w-full"
                     scrollbar={{ draggable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
