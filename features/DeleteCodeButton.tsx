@@ -39,7 +39,7 @@ const DeleteCodeButton = ({ id }: Props) => {
             }}
         >
             <MdDelete />
-            {sure ? '???' : ''}
+            {sure ? ' ?' : ''}
         </Button>
     );
 };

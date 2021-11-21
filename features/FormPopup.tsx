@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 import React from 'react';
-import { Block, Button, Link, List, ListInput, Navbar, Page, Popup } from 'tailwind-mobile/react';
+import { Block, BlockTitle, Button, Link, List, ListInput, Navbar, Page, Popup } from 'tailwind-mobile/react';
 import { v4 } from 'uuid';
 import { addCodeAtom, codeInFormAtom, editCodeAtom, setSrcAtom, setTitleAtom, showCodeFormAtom } from './atoms';
 import QRCodeFileUpload from './QRCodeFileUpload';
@@ -16,7 +16,7 @@ const INACTIVE_BUTTON_COLORS = {
 };
 
 const Placeholder: React.FC = ({ children }) => {
-    return <div className=" m-5">{children}</div>;
+    return <div className="h-[100px] w-[100px]">{children}</div>;
 };
 const useSubmitComponent = () => {
     const [code] = useAtom(codeInFormAtom);
@@ -37,7 +37,7 @@ const useSubmitComponent = () => {
             setPopupOpened(false);
         };
         return (
-            <Button onClick={onEditClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}}>
+            <Button onClick={onEditClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}} large>
                 Сохранить
             </Button>
         );
@@ -54,7 +54,7 @@ const useSubmitComponent = () => {
         setPopupOpened(false);
     };
     return (
-        <Button onClick={onAddClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}}>
+        <Button onClick={onAddClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}} large>
             Добавить
         </Button>
     );
@@ -77,10 +77,7 @@ const FormPopup = () => {
                         </Link>
                     }
                 />
-                <Block>
-                    {/* <Button onClick={onAddClick}>Add</Button> */}
-                    {submitComponent}
-                </Block>
+                <BlockTitle>Заполните поля.</BlockTitle>
                 <List hairlines={true}>
                     <ListInput
                         label="Название"
@@ -92,7 +89,7 @@ const FormPopup = () => {
                         onChange={(e) => setTitle(e.target.value)}
                     />
                     <ListInput
-                        label="Текст"
+                        label="Ссылка или текст"
                         floatingLabel
                         type="text"
                         placeholder="Текст"
@@ -101,11 +98,13 @@ const FormPopup = () => {
                         onChange={(e) => setUrl(e.target.value)}
                     />
                 </List>
+                <BlockTitle>Или загрузите скриншот QR кода.</BlockTitle>
                 <Block>
                     <QRCodeFileUpload src={url} setSrc={setUrl} />
                 </Block>
-                <Block>
-                    <Placeholder>{url && <QRCode value={url} level="Q" size={200} />}</Placeholder>
+                <Block>{submitComponent}</Block>
+                <Block className="grid place-items-center">
+                    <Placeholder>{url && <QRCode value={url} level="Q" size={100} />}</Placeholder>
                 </Block>
             </Page>
         </Popup>

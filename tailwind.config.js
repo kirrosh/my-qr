@@ -2,6 +2,7 @@ const tailwindMobile = require('tailwind-mobile/config');
 
 // wrap config with tailwindMobile config
 module.exports = tailwindMobile({
+    mode: 'jit',
     purge: ['./pages/**/*.{js,ts,jsx,tsx}', './features/**/*.{js,ts,jsx,tsx}'],
     darkMode: false, // or 'media' or 'class'
     theme: {

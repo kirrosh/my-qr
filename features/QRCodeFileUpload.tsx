@@ -16,15 +16,9 @@ const QRCodeFileUpload = ({ src, setSrc }: Props) => {
         }
         QrScanner.scanImage(file)
             .then((result) => setSrc(result))
-            .catch((e) => alert('No QR code found.'));
+            .catch((e) => alert('QR код не обнаружен :('));
     };
-    return (
-        <div id="render" className="h-full w-full">
-            <Block>
-                <input type="file" onChange={onUpload} />
-            </Block>
-        </div>
-    );
+    return <input type="file" onChange={onUpload} />;
 };
 
 export default QRCodeFileUpload;
