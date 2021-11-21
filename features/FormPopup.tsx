@@ -98,7 +98,7 @@ const FormPopup = () => {
                         onChange={(e) => setUrl(e.target.value)}
                     />
                 </List>
-                <BlockTitle>Или загрузите скриншот QR кода.</BlockTitle>
+                <BlockTitle>Или загрузите картинку с QR кодом.</BlockTitle>
                 <Block>
                     <QRCodeFileUpload src={url} setSrc={setUrl} />
                 </Block>
