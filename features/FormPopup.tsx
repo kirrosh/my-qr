@@ -38,7 +38,7 @@ const useSubmitComponent = () => {
         };
         return (
             <Button onClick={onEditClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}}>
-                Save
+                Сохранить
             </Button>
         );
     }
@@ -55,7 +55,7 @@ const useSubmitComponent = () => {
     };
     return (
         <Button onClick={onAddClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}}>
-            Add
+            Добавить
         </Button>
     );
 };
@@ -73,7 +73,7 @@ const FormPopup = () => {
                     title="QR"
                     right={
                         <Link navbar onClick={() => setPopupOpened(false)}>
-                            Close
+                            Закрыть
                         </Link>
                     }
                 />
@@ -83,19 +83,19 @@ const FormPopup = () => {
                 </Block>
                 <List hairlines={true}>
                     <ListInput
-                        label="Title"
+                        label="Название"
                         floatingLabel
                         type="text"
-                        placeholder="Title"
+                        placeholder="Название"
                         value={title}
                         // @ts-ignore
                         onChange={(e) => setTitle(e.target.value)}
                     />
                     <ListInput
-                        label="Url"
+                        label="Текст"
                         floatingLabel
                         type="text"
-                        placeholder="url"
+                        placeholder="Текст"
                         value={url}
                         // @ts-ignore
                         onChange={(e) => setUrl(e.target.value)}
