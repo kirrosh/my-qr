@@ -43,6 +43,7 @@ const Home: NextPage = () => {
             <Fab
                 className="fixed left-1/2 bottom-4-safe transform -translate-x-1/2 z-20"
                 icon={<MdAdd />}
+                text="Добавить QR код"
                 onClick={() => setPopupOpened(true)}
             />
         </Page>
