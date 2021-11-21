@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,6 +10,7 @@ import { useAtom } from 'jotai';
 import { savedCodesAtom, showCodeFormAtom } from '../features/atoms';
 import { MdAdd } from 'react-icons/md';
 import FormPopup from '../features/FormPopup';
+import MetaData from '../features/MetaData';
 
 const Home: NextPage = () => {
     const [popupOpened, setPopupOpened] = useAtom(showCodeFormAtom);
@@ -19,11 +19,7 @@ const Home: NextPage = () => {
     return (
         <Page>
             <FormPopup />
-            <Head>
-                <title>My QR</title>
-                <meta name="description" content="Save your QR" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <MetaData />
 
             <div className="w-full h-full">
                 <Swiper
