@@ -1,6 +1,6 @@
 {
     "name": "My QR",
-    "short_name": "my-qr",
+    "short_name": "My QR",
     "theme_color": "#f72585",
     "background_color": "#560bad",
     "start_url": "/",
