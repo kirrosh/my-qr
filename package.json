@@ -8,6 +8,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "amplitude-js": "^8.12.0",
         "jotai": "^1.4.4",
         "next": "12.0.4",
         "next-pwa": "^5.4.0",
@@ -22,6 +23,7 @@
         "uuid": "^8.3.2"
     },
     "devDependencies": {
+        "@types/amplitude-js": "^8.0.2",
         "@types/node": "16.11.9",
         "@types/qrcode.react": "^1.0.2",
         "@types/react": "17.0.35",

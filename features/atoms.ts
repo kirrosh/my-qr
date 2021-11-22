@@ -1,5 +1,6 @@
 import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
+import { AMPLITUDE_EVENTS, logEvent } from '../lib/amplitude';
 
 export type ICode = {
     id: string;
@@ -10,6 +11,11 @@ export type ICode = {
 export const showCodeFormAtom = atom(false, (get, set, value: boolean) => {
     set(codeInFormAtom, undefined);
     set(showCodeFormAtom, value);
+    if (value) {
+        logEvent(AMPLITUDE_EVENTS.OPEN_POPUP);
+    } else {
+        logEvent(AMPLITUDE_EVENTS.CLOSE_POPUP);
+    }
 });
 export const codeInFormAtom = atom<Partial<ICode> | undefined>(undefined);
 export const setTitleAtom = atom(
@@ -32,6 +38,7 @@ export const savedCodesAtom = atomWithStorage<ICode[]>('qr_codes', []);
 export const addCodeAtom = atom(
     (get) => get(savedCodesAtom),
     (get, set, qr: ICode) => {
+        logEvent(AMPLITUDE_EVENTS.ADD_CODE);
         const codes = get(savedCodesAtom);
         set(savedCodesAtom, [...codes, qr]);
     }
@@ -39,6 +46,7 @@ export const addCodeAtom = atom(
 export const editCodeAtom = atom(
     (get) => get(savedCodesAtom),
     (get, set, qr: ICode) => {
+        logEvent(AMPLITUDE_EVENTS.EDIT_CODE);
         const codes = get(savedCodesAtom);
         const newCodes = codes.map((code) => (code.id === qr.id ? qr : code));
         set(savedCodesAtom, newCodes);
@@ -47,6 +55,7 @@ export const editCodeAtom = atom(
 export const deleteCodeAtom = atom(
     (get) => get(savedCodesAtom),
     (get, set, id: string) => {
+        logEvent(AMPLITUDE_EVENTS.DELETE_CODE);
         const codes = get(savedCodesAtom);
         set(
             savedCodesAtom,
