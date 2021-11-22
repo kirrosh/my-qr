@@ -1,11 +1,13 @@
 import QrScanner from 'qr-scanner';
-import React, { useState } from 'react';
-import { Block } from 'tailwind-mobile/react';
+import React, { useRef } from 'react';
+import { MdQrCodeScanner } from 'react-icons/md';
+import { ListButton } from 'tailwind-mobile/react';
 type Props = {
     src: string;
     setSrc: (src: string) => void;
 };
 const QRCodeFileUpload = ({ src, setSrc }: Props) => {
+    const inputRef = useRef<HTMLInputElement>(null);
     const onUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) {
             return;
@@ -18,7 +20,13 @@ const QRCodeFileUpload = ({ src, setSrc }: Props) => {
             .then((result) => setSrc(result))
             .catch((e) => alert('QR код не обнаружен :('));
     };
-    return <input type="file" onChange={onUpload} />;
+    return (
+        <ListButton onClick={() => inputRef.current?.click()}>
+            <MdQrCodeScanner />
+            Считать код
+            <input type="file" onChange={onUpload} style={{ display: 'none' }} ref={inputRef} />
+        </ListButton>
+    );
 };
 
 export default QRCodeFileUpload;

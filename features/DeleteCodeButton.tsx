@@ -31,7 +31,6 @@ const DeleteCodeButton = ({ id }: Props) => {
         <Button
             onClick={onDeleteClick}
             colors={{
-                //   text: 'text-red-500',
                 border: 'border-red-500',
                 bg: 'bg-red-500',
                 activeBg: 'active:bg-red-500',

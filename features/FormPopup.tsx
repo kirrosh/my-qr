@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 import React from 'react';
-import { Block, BlockTitle, Button, Link, List, ListInput, Navbar, Page, Popup } from 'tailwind-mobile/react';
+import { Block, Button, Link, List, ListInput, ListItem, Navbar, Page, Popup } from 'tailwind-mobile/react';
 import { v4 } from 'uuid';
 import { addCodeAtom, codeInFormAtom, editCodeAtom, setSrcAtom, setTitleAtom, showCodeFormAtom } from './atoms';
 import QRCodeFileUpload from './QRCodeFileUpload';
@@ -68,18 +68,24 @@ const FormPopup = () => {
 
     return (
         <Popup opened={popupOpened} onBackdropClick={() => setPopupOpened(false)}>
-            <Page>
+            <Page className="bg-[#efeff4]">
                 <Navbar
-                    title="QR"
+                    title="Заполните поля"
                     right={
                         <Link navbar onClick={() => setPopupOpened(false)}>
                             Закрыть
                         </Link>
                     }
                 />
-                <BlockTitle>Заполните поля.</BlockTitle>
-                <List hairlines={true}>
+                <Block>
+                    <p>
+                        Введенные сохраняются только на вашем устройстве! Приложение может работать без подключения к
+                        интернету.
+                    </p>
+                </Block>
+                <List inset>
                     <ListInput
+                        required
                         label="Название"
                         floatingLabel
                         type="text"
@@ -89,18 +95,24 @@ const FormPopup = () => {
                         onChange={(e) => setTitle(e.target.value)}
                     />
                     <ListInput
-                        label="Ссылка или текст"
+                        required
+                        label="Содержание кода"
                         floatingLabel
                         type="text"
-                        placeholder="Текст"
+                        placeholder="Содержание"
                         value={url}
                         // @ts-ignore
                         onChange={(e) => setUrl(e.target.value)}
                     />
-                </List>
-                <BlockTitle>Или загрузите картинку с QR кодом.</BlockTitle>
-                <Block>
                     <QRCodeFileUpload src={url} setSrc={setUrl} />
+                </List>
+                <Block>
+                    В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
+                    <br />
+                    Например: https://yandex.ru
+                    <br />
+                    <br />
+                    <p>Попробуйте отсканировать получившийся QR код.</p>
                 </Block>
                 <Block>{submitComponent}</Block>
                 <Block className="grid place-items-center">
