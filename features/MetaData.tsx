@@ -33,17 +33,17 @@ const MetaData = () => {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
 
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:url" content="https://yourdomain.com" />
-            <meta name="twitter:title" content="PWA App" />
-            <meta name="twitter:description" content="Best PWA App in the world" />
-            <meta name="twitter:image" content="https://yourdomain.com/icons/android-chrome-192x192.png" />
+            <meta name="twitter:url" content="https://my-qr.vercel.app" />
+            <meta name="twitter:title" content="My QR" />
+            <meta name="twitter:description" content="Best My QR in the world" />
+            <meta name="twitter:image" content="/icons/icon-192x192.png" />
             <meta name="twitter:creator" content="@DavidWShadow" />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="PWA App" />
-            <meta property="og:description" content="Best PWA App in the world" />
-            <meta property="og:site_name" content="PWA App" />
-            <meta property="og:url" content="https://yourdomain.com" />
-            <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" />
+            <meta property="og:title" content="My QR" />
+            <meta property="og:description" content="Быстрый доступ к QR коду" />
+            <meta property="og:site_name" content="My QR" />
+            <meta property="og:url" content="https://my-qr.vercel.app" />
+            <meta property="og:image" content="/icons/icon-512x512.png" />
 
             {/* <link rel='apple-touch-startup-image' href='/images/apple_splash_2048.png' sizes='2048x2732' />
 <link rel='apple-touch-startup-image' href='/images/apple_splash_1668.png' sizes='1668x2224' />
