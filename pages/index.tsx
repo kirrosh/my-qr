@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     const [codes] = useAtom(savedCodesAtom);
 
     return (
-        <Page>
+        <Page className="bg-[#efeff4]">
             <FormPopup />
             <MetaData />
 

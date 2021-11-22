@@ -5,7 +5,7 @@ const MetaData = () => {
     return (
         <Head>
             <title>My QR</title>
-            <meta name="description" content="Save your QR" />
+            <meta name="description" content="Offline QR list" />
             <link rel="icon" href="/favicon.ico" />
 
             <meta name="application-name" content="My QR" />

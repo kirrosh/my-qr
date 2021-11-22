@@ -10,7 +10,8 @@ export enum AMPLITUDE_EVENTS {
 }
 
 export const initAmplitude = () => {
-    const userId = v4();
+    const userId = localStorage.getItem('amp_user_id') || v4();
+    localStorage.setItem('amp_user_id', userId);
     if (process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY) {
         amplitude?.getInstance().init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY, userId);
     }
