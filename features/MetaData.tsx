@@ -35,15 +35,15 @@ const MetaData = () => {
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:url" content="https://my-qr.vercel.app" />
             <meta name="twitter:title" content="My QR" />
-            <meta name="twitter:description" content="Best My QR in the world" />
-            <meta name="twitter:image" content="/icons/icon-192x192.png" />
+            <meta name="twitter:description" content="Быстрый доступ к QR коду" />
+            <meta name="twitter:image" content="/icons/myqr.png" />
             <meta name="twitter:creator" content="@DavidWShadow" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="My QR" />
             <meta property="og:description" content="Быстрый доступ к QR коду" />
             <meta property="og:site_name" content="My QR" />
             <meta property="og:url" content="https://my-qr.vercel.app" />
-            <meta property="og:image" content="/icons/icon-512x512.png" />
+            <meta property="og:image" content="/icons/myqr.png" />
 
             {/* <link rel='apple-touch-startup-image' href='/images/apple_splash_2048.png' sizes='2048x2732' />
 <link rel='apple-touch-startup-image' href='/images/apple_splash_1668.png' sizes='1668x2224' />
