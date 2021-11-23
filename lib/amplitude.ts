@@ -7,7 +7,8 @@ export enum AMPLITUDE_EVENTS {
     DELETE_CODE = 'DELETE_CODE',
     OPEN_POPUP = 'OPEN_POPUP',
     CLOSE_POPUP = 'CLOSE_POPUP',
-    SHARE_CODE = 'SHARE_CODE'
+    SHARE_CODE = 'SHARE_CODE',
+    SHARE_APP = 'SHARE_APP'
 }
 
 export const initAmplitude = () => {
