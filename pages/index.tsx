@@ -41,7 +41,7 @@ const Home: NextPage = () => {
                 >
                     {codes.map((code) => (
                         <SwiperSlide className="grid place-items-center" key={code.id}>
-                            <CodeContent src={code.src} title={code.title} id={code.id} />
+                            <CodeContent code={code} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
