@@ -110,9 +110,6 @@ const FormPopup = () => {
                     В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
                     <br />
                     Например: https://yandex.ru
-                    <br />
-                    <br />
-                    <p>Попробуйте отсканировать получившийся QR код.</p>
                 </Block>
                 <Block>{submitComponent}</Block>
                 <Block className="grid place-items-center">
