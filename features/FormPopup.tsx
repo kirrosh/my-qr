@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 import React from 'react';
-import { Block, Button, Link, List, ListInput, ListItem, Navbar, Page, Popup } from 'tailwind-mobile/react';
+import { Block, Button, Link, List, ListInput, Navbar, Page, Popup } from 'tailwind-mobile/react';
 import { v4 } from 'uuid';
 import { addCodeAtom, codeInFormAtom, editCodeAtom, setSrcAtom, setTitleAtom, showCodeFormAtom } from './atoms';
 import QRCodeFileUpload from './QRCodeFileUpload';
@@ -79,8 +79,10 @@ const FormPopup = () => {
                 />
                 <Block>
                     <p>
-                        Введенные данные сохраняются только на вашем устройстве! Приложение может работать без
-                        подключения к интернету.
+                        Введенные данные сохраняются <b>только</b> на вашем устройстве!
+                        <br />
+                        Добавьте приложение на главный экран, тогда им можно будет пользоваться
+                        <b> без подключения к интернету.</b>
                     </p>
                 </Block>
                 <Block>{submitComponent}</Block>
@@ -110,7 +112,10 @@ const FormPopup = () => {
                 <Block>
                     В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
                     <br />
-                    Например: https://yandex.ru
+                    Например:{' '}
+                    <a className="underline cursor-pointer" onClick={() => setUrl('https://my-qr.vercel.app')}>
+                        https://my-qr.vercel.app
+                    </a>
                 </Block>
 
                 <Block className="grid place-items-center">

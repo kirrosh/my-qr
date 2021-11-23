@@ -10,7 +10,7 @@ import { Page, Fab } from 'tailwind-mobile/react';
 import CodeContent from '../features/CodeContent';
 import { useAtom } from 'jotai';
 import { savedCodesAtom, showCodeFormAtom } from '../features/atoms';
-import { MdAdd, MdCamera, MdCameraAlt, MdPhoto, MdShare } from 'react-icons/md';
+import { MdAdd, MdCameraAlt, MdShare } from 'react-icons/md';
 import FormPopup from '../features/FormPopup';
 import MetaData from '../features/MetaData';
 import { Pagination } from 'swiper';
