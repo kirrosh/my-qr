@@ -28,7 +28,9 @@ const Home: NextPage = () => {
 
     const onShareAppClick = async () => {
         try {
-            const res = await navigator.share({});
+            const res = await navigator.share({
+                url: ''
+            });
             logEvent(AMPLITUDE_EVENTS.SHARE_APP);
         } catch (e) {
             console.log(e);

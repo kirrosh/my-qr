@@ -3,6 +3,7 @@ import { MdShare } from 'react-icons/md';
 import { Button } from 'tailwind-mobile/react';
 import { AMPLITUDE_EVENTS, logEvent } from '../lib/amplitude';
 import { ICode } from './atoms';
+import isURL from 'validator/lib/isURL';
 
 type Props = {
     code: ICode;
@@ -10,11 +11,16 @@ type Props = {
 const ShareCodeButton = ({ code }: Props) => {
     const onShareClick = async () => {
         try {
-            const res = await navigator.share({
-                url: code?.src
-            });
+            if (isURL(code?.src)) {
+                await navigator.share({
+                    url: code?.src
+                });
+            } else {
+                await navigator.share({
+                    text: code?.src
+                });
+            }
             logEvent(AMPLITUDE_EVENTS.SHARE_CODE);
-            console.log(res);
         } catch (e) {
             console.log(e);
         }
