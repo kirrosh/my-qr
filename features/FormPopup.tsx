@@ -83,6 +83,7 @@ const FormPopup = () => {
                         подключения к интернету.
                     </p>
                 </Block>
+                <Block>{submitComponent}</Block>
                 <List inset>
                     <ListInput
                         required
@@ -111,7 +112,7 @@ const FormPopup = () => {
                     <br />
                     Например: https://yandex.ru
                 </Block>
-                <Block>{submitComponent}</Block>
+
                 <Block className="grid place-items-center">
                     <Placeholder>{url && <QRCode value={url} level="Q" size={100} />}</Placeholder>
                 </Block>
