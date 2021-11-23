@@ -38,7 +38,7 @@ const Home: NextPage = () => {
     };
 
     return (
-        <Page className="bg-[#efeff4]">
+        <Page>
             <FormPopup />
             <MetaData />
 

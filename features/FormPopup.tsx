@@ -68,7 +68,7 @@ const FormPopup = () => {
 
     return (
         <Popup opened={popupOpened} onBackdropClick={() => setPopupOpened(false)}>
-            <Page className="bg-[#efeff4]">
+            <Page>
                 <Navbar
                     title="Заполните поля"
                     right={
@@ -77,19 +77,11 @@ const FormPopup = () => {
                         </Link>
                     }
                 />
-                <Block>
-                    <p>
-                        Введенные данные сохраняются <b>только</b> на вашем устройстве!
-                        <br />
-                        Добавьте приложение на главный экран, тогда им можно будет пользоваться
-                        <b> без подключения к интернету.</b>
-                    </p>
-                </Block>
-                <Block>{submitComponent}</Block>
+
                 <List inset>
                     <ListInput
                         required
-                        label="Название"
+                        label="Название кода"
                         floatingLabel
                         type="text"
                         placeholder="Название"
@@ -109,6 +101,15 @@ const FormPopup = () => {
                     />
                     <QRCodeFileUpload src={url} setSrc={setUrl} />
                 </List>
+                <Block>{submitComponent}</Block>
+                <Block>
+                    <p>
+                        Введенные данные сохраняются <b>только</b> на вашем устройстве!
+                        <br />
+                        Добавьте приложение на главный экран, тогда им можно будет пользоваться
+                        <b> без подключения к интернету.</b>
+                    </p>
+                </Block>
                 <Block>
                     В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
                     <br />

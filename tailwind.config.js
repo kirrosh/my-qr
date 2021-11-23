@@ -8,8 +8,8 @@ module.exports = tailwindMobile({
     theme: {
         extend: {
             colors: {
-                'page-ios-light': '#fff',
-                'page-ios-dark': '#000',
+                'page-ios-light': '#efeff4',
+                'page-ios-dark': '#212121',
                 primary: {
                     light: '#480ca8',
                     DEFAULT: '#480ca8',
