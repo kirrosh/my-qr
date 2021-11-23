@@ -6,7 +6,7 @@ type Props = {
     src: string;
     setSrc: (src: string) => void;
 };
-QrScanner.WORKER_PATH = '/';
+QrScanner.WORKER_PATH = '/qr-scanner-worker.min.js';
 const QRCodeFileUpload = ({ src, setSrc }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const onUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
