@@ -2,16 +2,17 @@ import { useAtom } from 'jotai';
 import React from 'react';
 import { MdShare } from 'react-icons/md';
 import { Button } from 'tailwind-mobile/react';
+import { AMPLITUDE_EVENTS, logEvent } from '../lib/amplitude';
 import { setSrcAtom } from './atoms';
 
 const ShareCodeButton = () => {
     const [src] = useAtom(setSrcAtom);
     const onShareClick = async () => {
-        console.log('onpress');
         try {
             const res = await navigator.share({
                 url: src
             });
+            logEvent(AMPLITUDE_EVENTS.SHARE_CODE);
             console.log(res);
         } catch (e) {
             console.log(e);
