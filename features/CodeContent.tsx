@@ -3,44 +3,38 @@ import QRCode from 'qrcode.react';
 import { Button } from 'tailwind-mobile/react';
 import { MdModeEdit } from 'react-icons/md';
 import { useAtom } from 'jotai';
-import { codeInFormAtom, showCodeFormAtom } from './atoms';
+import { codeInFormAtom, ICode, showCodeFormAtom } from './atoms';
 import DeleteCodeButton from './DeleteCodeButton';
 import ShareCodeButton from './ShareCodeButton';
 
 type Props = {
-    src: string;
-    title: string;
-    id: string;
+    code: ICode;
 };
 
 const DEFAULT_SIZE = 200;
 
-const CodeContent = ({ src, title, id }: Props) => {
+const CodeContent = ({ code }: Props) => {
     const [__, setCodeInForm] = useAtom(codeInFormAtom);
     const [___, setPopupOpened] = useAtom(showCodeFormAtom);
     const onEditClick = () => {
         setPopupOpened(true);
-        setCodeInForm({
-            src,
-            title,
-            id
-        });
+        setCodeInForm(code);
     };
     return (
         <div className="w-full grid place-items-center">
             <div className="grid p-4 gap-4 rounded-md">
-                <div className="grid place-items-center text-3xl">{title}</div>
+                <div className="grid place-items-center text-3xl">{code.title}</div>
                 <div
                     style={{
                         width: DEFAULT_SIZE,
                         height: DEFAULT_SIZE
                     }}
                 >
-                    <QRCode value={src} level="Q" size={DEFAULT_SIZE} />
+                    <QRCode value={code.src} level="Q" size={DEFAULT_SIZE} />
                 </div>
                 <div className="flex gap-4">
-                    <DeleteCodeButton id={id} />
-                    <ShareCodeButton />
+                    <DeleteCodeButton id={code.id} />
+                    <ShareCodeButton code={code} />
                     <Button onClick={onEditClick}>
                         <MdModeEdit />
                     </Button>
