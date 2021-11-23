@@ -14,7 +14,8 @@ module.exports = tailwindMobile({
                     light: '#480ca8',
                     DEFAULT: '#480ca8',
                     dark: '#480ca8'
-                }
+                },
+                secondary: '#f72585'
             }
         }
     },

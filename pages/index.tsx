@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Page, Fab } from 'tailwind-mobile/react';
 import CodeContent from '../features/CodeContent';
 import { useAtom } from 'jotai';
@@ -18,6 +18,12 @@ import { Pagination } from 'swiper';
 const Home: NextPage = () => {
     const [popupOpened, setPopupOpened] = useAtom(showCodeFormAtom);
     const [codes] = useAtom(savedCodesAtom);
+
+    useEffect(() => {
+        if (codes.length === 0) {
+            setPopupOpened(true);
+        }
+    }, []);
 
     return (
         <Page className="bg-[#efeff4]">

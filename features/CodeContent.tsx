@@ -5,6 +5,7 @@ import { MdModeEdit } from 'react-icons/md';
 import { useAtom } from 'jotai';
 import { codeInFormAtom, showCodeFormAtom } from './atoms';
 import DeleteCodeButton from './DeleteCodeButton';
+import ShareCodeButton from './ShareCodeButton';
 
 type Props = {
     src: string;
@@ -39,6 +40,7 @@ const CodeContent = ({ src, title, id }: Props) => {
                 </div>
                 <div className="flex gap-4">
                     <DeleteCodeButton id={id} />
+                    <ShareCodeButton />
                     <Button onClick={onEditClick}>
                         <MdModeEdit />
                     </Button>
