@@ -10,10 +10,11 @@ import { Page, Fab } from 'tailwind-mobile/react';
 import CodeContent from '../features/CodeContent';
 import { useAtom } from 'jotai';
 import { savedCodesAtom, showCodeFormAtom } from '../features/atoms';
-import { MdAdd } from 'react-icons/md';
+import { MdAdd, MdCamera, MdCameraAlt, MdPhoto, MdShare } from 'react-icons/md';
 import FormPopup from '../features/FormPopup';
 import MetaData from '../features/MetaData';
 import { Pagination } from 'swiper';
+import { AMPLITUDE_EVENTS, logEvent } from '../lib/amplitude';
 
 const Home: NextPage = () => {
     const [popupOpened, setPopupOpened] = useAtom(showCodeFormAtom);
@@ -24,6 +25,15 @@ const Home: NextPage = () => {
             setPopupOpened(true);
         }
     }, []);
+
+    const onShareAppClick = async () => {
+        try {
+            const res = await navigator.share({});
+            logEvent(AMPLITUDE_EVENTS.SHARE_APP);
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
     return (
         <Page className="bg-[#efeff4]">
@@ -47,10 +57,21 @@ const Home: NextPage = () => {
                 </Swiper>
             </div>
             <Fab
+                className="fixed left-4-safe bottom-4-safe z-20"
+                icon={<MdShare />}
+                onClick={onShareAppClick}
+                colors={{ bg: 'bg-secondary', activeBg: 'active:bg-secondary' }}
+            />
+            <Fab
                 className="fixed left-1/2 bottom-4-safe transform -translate-x-1/2 z-20"
                 icon={<MdAdd />}
                 text="Добавить"
                 onClick={() => setPopupOpened(true)}
+            />
+            <Fab
+                className="fixed right-4-safe bottom-4-safe z-20"
+                icon={<MdCameraAlt />}
+                colors={{ bg: 'bg-gray-300', activeBg: 'active:bg-gray-300' }}
             />
         </Page>
     );
