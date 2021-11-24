@@ -92,7 +92,6 @@ const FormPopup = () => {
                         </Link>
                     }
                 />
-
                 <List inset>
                     <ListInput
                         required

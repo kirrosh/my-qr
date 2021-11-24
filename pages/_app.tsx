@@ -4,6 +4,9 @@ import type { AppProps } from 'next/app';
 import React from 'react';
 import { App } from 'tailwind-mobile/react';
 import { initAmplitude } from '../lib/amplitude';
+import { initSentry } from '../lib/sentry';
+
+initSentry();
 
 function MyApp({ Component, pageProps }: AppProps) {
     React.useEffect(() => {
