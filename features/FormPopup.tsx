@@ -94,7 +94,7 @@ const FormPopup = () => {
                         label="Содержание кода"
                         floatingLabel
                         type="text"
-                        placeholder="Содержание"
+                        placeholder="http:// ..."
                         value={url}
                         // @ts-ignore
                         onChange={(e) => setUrl(e.target.value)}
