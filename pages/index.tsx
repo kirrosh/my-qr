@@ -9,15 +9,17 @@ import React, { useEffect } from 'react';
 import { Page, Fab } from 'tailwind-mobile/react';
 import CodeContent from '../features/CodeContent';
 import { useAtom } from 'jotai';
-import { savedCodesAtom, showCodeFormAtom } from '../features/atoms';
+import { savedCodesAtom, showCodeFormAtom, webCameraPopupAtom } from '../features/atoms';
 import { MdAdd, MdCameraAlt, MdShare } from 'react-icons/md';
 import FormPopup from '../features/FormPopup';
 import MetaData from '../features/MetaData';
 import { Pagination } from 'swiper';
 import { AMPLITUDE_EVENTS, logEvent } from '../lib/amplitude';
+import WebCameraPopup from '../features/WebCameraPopup';
 
 const Home: NextPage = () => {
     const [popupOpened, setPopupOpened] = useAtom(showCodeFormAtom);
+    const [cameraPopup, setWebCameraPopupOpened] = useAtom(webCameraPopupAtom);
     const [codes] = useAtom(savedCodesAtom);
 
     useEffect(() => {
@@ -39,8 +41,9 @@ const Home: NextPage = () => {
 
     return (
         <Page>
-            <FormPopup />
             <MetaData />
+            <FormPopup />
+            <WebCameraPopup />
 
             <div className="w-full h-full grid place-items-center">
                 <Swiper
@@ -71,9 +74,10 @@ const Home: NextPage = () => {
                 onClick={() => setPopupOpened(true)}
             />
             <Fab
-                className="fixed right-4-safe bottom-4-safe z-20"
                 icon={<MdCameraAlt />}
-                colors={{ bg: 'bg-gray-300', activeBg: 'active:bg-gray-300' }}
+                className="fixed right-4-safe bottom-4-safe z-20"
+                colors={{ bg: 'bg-secondary', activeBg: 'active:bg-secondary' }}
+                onClick={() => setWebCameraPopupOpened(true)}
             />
         </Page>
     );

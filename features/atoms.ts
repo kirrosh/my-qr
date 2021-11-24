@@ -63,3 +63,5 @@ export const deleteCodeAtom = atom(
         );
     }
 );
+
+export const webCameraPopupAtom = atom(false);
