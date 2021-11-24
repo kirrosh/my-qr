@@ -1,10 +1,19 @@
 import { useAtom } from 'jotai';
 import React from 'react';
-import { Block, Button, Link, List, ListInput, Navbar, Page, Popup } from 'tailwind-mobile/react';
+import { Block, Button, Link, List, ListButton, ListInput, Navbar, Page, Popup } from 'tailwind-mobile/react';
 import { v4 } from 'uuid';
-import { addCodeAtom, codeInFormAtom, editCodeAtom, setSrcAtom, setTitleAtom, showCodeFormAtom } from './atoms';
+import {
+    addCodeAtom,
+    codeInFormAtom,
+    editCodeAtom,
+    setSrcAtom,
+    setTitleAtom,
+    showCodeFormAtom,
+    webCameraPopupAtom
+} from './atoms';
 import QRCodeFileUpload from './QRCodeFileUpload';
 import QRCode from 'qrcode.react';
+import { MdCameraAlt } from 'react-icons/md';
 
 const INACTIVE_BUTTON_COLORS = {
     text: 'text-red-500',
@@ -65,6 +74,12 @@ const FormPopup = () => {
     const [url, setUrl] = useAtom(setSrcAtom);
     const [title, setTitle] = useAtom(setTitleAtom);
     const submitComponent = useSubmitComponent();
+    const [_, setCameraPopup] = useAtom(webCameraPopupAtom);
+
+    const onScanWithCameraClick = () => {
+        setPopupOpened(false);
+        setCameraPopup(true);
+    };
 
     return (
         <Popup opened={popupOpened} onBackdropClick={() => setPopupOpened(false)}>
@@ -100,6 +115,10 @@ const FormPopup = () => {
                         onChange={(e) => setUrl(e.target.value)}
                     />
                     <QRCodeFileUpload src={url} setSrc={setUrl} />
+                    <ListButton onClick={onScanWithCameraClick}>
+                        <MdCameraAlt />
+                        &nbsp;Сканировать QR код камерой
+                    </ListButton>
                 </List>
                 <Block>{submitComponent}</Block>
                 <Block>
@@ -110,6 +129,7 @@ const FormPopup = () => {
                         <b> без подключения к интернету.</b>
                     </p>
                 </Block>
+                <Block className="grid place-items-center">{url && <QRCode value={url} level="Q" size={100} />}</Block>
                 <Block>
                     В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
                     <br />
@@ -117,10 +137,6 @@ const FormPopup = () => {
                     <a className="underline cursor-pointer" onClick={() => setUrl('https://my-qr.vercel.app')}>
                         https://my-qr.vercel.app
                     </a>
-                </Block>
-
-                <Block className="grid place-items-center">
-                    <Placeholder>{url && <QRCode value={url} level="Q" size={100} />}</Placeholder>
                 </Block>
             </Page>
         </Popup>
