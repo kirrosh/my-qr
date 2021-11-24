@@ -25,7 +25,14 @@ const QRCodeFileUpload = ({ src, setSrc }: Props) => {
         <ListButton onClick={() => inputRef.current?.click()}>
             <MdQrCodeScanner />
             &nbsp;Сканировать QR код из файла
-            <input type="file" onChange={onUpload} style={{ display: 'none' }} ref={inputRef} />
+            <input
+                type="file"
+                onChange={onUpload}
+                style={{ display: 'none' }}
+                ref={inputRef}
+                accept="image/*"
+                capture={false}
+            />
         </ListButton>
     );
 };
