@@ -40,7 +40,6 @@ const AnimatedPopup: FC = ({ children }) => {
             <Popup opened={show} onBackdropClick={() => push(ROUTES.HOME)}>
                 <Page>
                     <Navbar
-                        // title="Заполните поля"
                         right={
                             <Link navbar onClick={() => push(ROUTES.HOME)}>
                                 Закрыть
