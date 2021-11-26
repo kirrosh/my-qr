@@ -17,6 +17,7 @@ a {
 
 .swiper {
     --swiper-theme-color: #40916c;
+    --swiper-pagination-bullet-inactive-color: #fff;
 }
 
 .swiper-wrapper {
