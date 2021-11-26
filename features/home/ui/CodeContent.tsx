@@ -32,7 +32,7 @@ const CodeContent = ({ code }: Props) => {
                         height: DEFAULT_SIZE
                     }}
                 >
-                    <QRCode value={code.src} level="Q" size={DEFAULT_SIZE} />
+                    <QRCode value={code.src} level="Q" size={DEFAULT_SIZE} bgColor="#212121" fgColor="#efeff4" />
                 </div>
                 <div className="flex gap-4">
                     <DeleteCodeButton id={code.id} />
@@ -45,5 +45,4 @@ const CodeContent = ({ code }: Props) => {
         </div>
     );
 };
-
 export default CodeContent;

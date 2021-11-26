@@ -16,8 +16,9 @@ a {
 }
 
 .swiper {
-    --swiper-theme-color: #480ca8;
+    --swiper-theme-color: #40916c;
 }
+
 .swiper-wrapper {
     margin-bottom: 30px;
 }

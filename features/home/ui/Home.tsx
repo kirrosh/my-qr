@@ -64,7 +64,6 @@ const Home: NextPage = () => {
             <Fab
                 icon={<MdCameraAlt />}
                 className="fixed right-4-safe bottom-4-safe z-20"
-                colors={{ bg: 'bg-secondary', activeBg: 'active:bg-secondary' }}
                 onClick={() => push(ROUTES.CAMERA)}
             />
         </Page>
