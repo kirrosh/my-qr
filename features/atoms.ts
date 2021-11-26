@@ -8,15 +8,7 @@ export type ICode = {
     src: string;
 };
 // Popup form atoms
-export const showCodeFormAtom = atom(false, (get, set, value: boolean) => {
-    set(codeInFormAtom, undefined);
-    set(showCodeFormAtom, value);
-    if (value) {
-        logEvent(AMPLITUDE_EVENTS.OPEN_POPUP);
-    } else {
-        logEvent(AMPLITUDE_EVENTS.CLOSE_POPUP);
-    }
-});
+
 export const codeInFormAtom = atom<Partial<ICode> | undefined>(undefined);
 export const setTitleAtom = atom(
     (get) => get(codeInFormAtom)?.title || '',

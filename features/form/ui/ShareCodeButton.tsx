@@ -1,8 +1,8 @@
 import React from 'react';
 import { MdShare } from 'react-icons/md';
 import { Button } from 'tailwind-mobile/react';
-import { AMPLITUDE_EVENTS, logEvent } from '../lib/amplitude';
-import { ICode } from './atoms';
+import { AMPLITUDE_EVENTS, logEvent } from '../../../lib/amplitude';
+import { ICode } from '../../atoms';
 import isURL from 'validator/lib/isURL';
 
 type Props = {
