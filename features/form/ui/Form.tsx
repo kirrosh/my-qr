@@ -62,7 +62,9 @@ const AddForm = () => {
                     <b> без подключения к интернету.</b>
                 </p>
             </Block>
-            <Block className="grid place-items-center">{url && <QRCode value={url} level="Q" size={100} />}</Block>
+            <Block className="grid place-items-center">
+                {url && <QRCode value={url} level="Q" size={100} bgColor="#212121" fgColor="#efeff4" />}
+            </Block>
             <Block>
                 В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
                 <br />
