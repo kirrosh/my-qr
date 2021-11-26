@@ -4,18 +4,18 @@ const tailwindMobile = require('tailwind-mobile/config');
 module.exports = tailwindMobile({
     mode: 'jit',
     purge: ['./pages/**/*.{js,ts,jsx,tsx}', './features/**/*.{js,ts,jsx,tsx}'],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: 'media', // or 'media' or 'class'
     theme: {
         extend: {
             colors: {
                 'page-ios-light': '#efeff4',
                 'page-ios-dark': '#212121',
                 primary: {
-                    light: '#480ca8',
-                    DEFAULT: '#480ca8',
-                    dark: '#480ca8'
+                    light: '#40916c',
+                    DEFAULT: '#40916c',
+                    dark: '#40916c'
                 },
-                secondary: '#f72585'
+                secondary: '#457b9d'
             }
         }
     },
