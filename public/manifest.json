@@ -1,8 +1,8 @@
 {
     "name": "My QR",
     "short_name": "My QR",
-    "theme_color": "#f72585",
-    "background_color": "#560bad",
+    "theme_color": "#40916c",
+    "background_color": "#212121",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
