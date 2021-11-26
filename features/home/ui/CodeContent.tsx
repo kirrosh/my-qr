@@ -3,9 +3,11 @@ import QRCode from 'qrcode.react';
 import { Button } from 'tailwind-mobile/react';
 import { MdModeEdit } from 'react-icons/md';
 import { useAtom } from 'jotai';
-import { codeInFormAtom, ICode, showCodeFormAtom } from './atoms';
+import { codeInFormAtom, ICode } from '../../atoms';
 import DeleteCodeButton from './DeleteCodeButton';
-import ShareCodeButton from './ShareCodeButton';
+import ShareCodeButton from '../../form/ui/ShareCodeButton';
+import { useRouter } from 'next/dist/client/router';
+import { ROUTES } from 'lib/router';
 
 type Props = {
     code: ICode;
@@ -15,9 +17,9 @@ const DEFAULT_SIZE = 200;
 
 const CodeContent = ({ code }: Props) => {
     const [__, setCodeInForm] = useAtom(codeInFormAtom);
-    const [___, setPopupOpened] = useAtom(showCodeFormAtom);
+    const { push } = useRouter();
     const onEditClick = () => {
-        setPopupOpened(true);
+        push(ROUTES.FORM);
         setCodeInForm(code);
     };
     return (

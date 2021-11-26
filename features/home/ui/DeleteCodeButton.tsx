@@ -2,7 +2,7 @@ import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 import { Button } from 'tailwind-mobile/react';
-import { deleteCodeAtom } from './atoms';
+import { deleteCodeAtom } from '../../atoms';
 
 type Props = {
     id: string;
