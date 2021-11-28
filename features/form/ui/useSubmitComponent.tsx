@@ -35,7 +35,7 @@ export const useSubmitComponent = () => {
         };
         return (
             <Button onClick={onEditClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}} large>
-                Сохранить
+                Save
             </Button>
         );
     }
@@ -52,7 +52,7 @@ export const useSubmitComponent = () => {
     };
     return (
         <Button onClick={onAddClick} colors={disabled ? INACTIVE_BUTTON_COLORS : {}} large>
-            Добавить
+            Add
         </Button>
     );
 };

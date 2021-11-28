@@ -5,14 +5,13 @@ const MetaData = () => {
     return (
         <Head>
             <title>My QR</title>
-            <meta name="description" content="Offline QR list" />
             <link rel="icon" href="/favicon.ico" />
 
             <meta name="application-name" content="My QR" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="default" />
             <meta name="apple-mobile-web-app-title" content="My QR" />
-            <meta name="description" content="Быстрый доступ к QR коду" />
+            <meta name="description" content="Fast access to QR code" />
             <meta name="format-detection" content="telephone=no" />
             <meta name="mobile-web-app-capable" content="yes" />
             <meta name="msapplication-config" content="/icons/browserconfig.xml" />
@@ -43,12 +42,12 @@ const MetaData = () => {
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:url" content="https://my-qr.vercel.app" />
             <meta name="twitter:title" content="My QR" />
-            <meta name="twitter:description" content="Быстрый доступ к QR коду" />
+            <meta name="twitter:description" content="Fast access to QR code" />
             <meta name="twitter:image" content="/icons/myqr.png" />
             <meta name="twitter:creator" content="@DavidWShadow" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="My QR" />
-            <meta property="og:description" content="Быстрый доступ к QR коду" />
+            <meta property="og:description" content="Fast access to QR code" />
             <meta property="og:site_name" content="My QR" />
             <meta property="og:url" content="https://my-qr.vercel.app" />
             <meta property="og:image" content="/icons/myqr.png" />

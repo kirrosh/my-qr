@@ -19,12 +19,12 @@ const QRCodeFileUpload = ({ src, setSrc }: Props) => {
         }
         QrScanner.scanImage(file)
             .then((result) => setSrc(result))
-            .catch((e) => alert('QR код не обнаружен :('));
+            .catch((e) => alert('No QR code founded :('));
     };
     return (
         <ListButton onClick={() => inputRef.current?.click()}>
             <MdQrCodeScanner />
-            &nbsp;Сканировать QR код из файла
+            &nbsp;Read QR code from file
             <input type="file" onChange={onUpload} style={{ display: 'none' }} ref={inputRef} />
         </ListButton>
     );

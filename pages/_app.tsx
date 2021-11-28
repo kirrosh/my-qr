@@ -42,7 +42,7 @@ const AnimatedPopup: FC = ({ children }) => {
                     <Navbar
                         right={
                             <Link navbar onClick={() => push(ROUTES.HOME)}>
-                                Закрыть
+                                Close
                             </Link>
                         }
                     />
