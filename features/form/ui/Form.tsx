@@ -29,17 +29,17 @@ const AddForm = () => {
             <List inset>
                 <ListInput
                     required
-                    label="Название кода"
+                    label="Name"
                     floatingLabel
                     type="text"
-                    placeholder="Название"
+                    placeholder="Name"
                     value={title}
                     // @ts-ignore
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <ListInput
                     required
-                    label="Содержание кода"
+                    label="Text"
                     floatingLabel
                     type="text"
                     placeholder="http:// ..."
@@ -50,29 +50,29 @@ const AddForm = () => {
                 <QRCodeFileUpload src={url} setSrc={setUrl} />
                 <ListButton onClick={onScanWithCameraClick}>
                     <MdCameraAlt />
-                    &nbsp;Сканировать QR код камерой
+                    &nbsp;Scan QR code with camera
                 </ListButton>
             </List>
             <Block>{submitComponent}</Block>
             <Block>
-                <p>
+                {/* <p>
                     Введенные данные сохраняются <b>только</b> на вашем устройстве!
                     <br />
                     Добавьте приложение на главный экран, тогда им можно будет пользоваться
                     <b> без подключения к интернету.</b>
-                </p>
+                </p> */}
             </Block>
             <Block className="grid place-items-center">
                 {url && <QRCode value={url} level="Q" size={100} bgColor="#212121" fgColor="#efeff4" />}
             </Block>
-            <Block>
+            {/* <Block>
                 В QR код можно поместить любой текст. Обычно это ссылка на какой-нибудь вебсайт.
                 <br />
                 Например:{' '}
                 <a className="underline cursor-pointer" onClick={() => setUrl('https://my-qr.vercel.app')}>
                     https://my-qr.vercel.app
                 </a>
-            </Block>
+            </Block> */}
         </>
     );
 };
