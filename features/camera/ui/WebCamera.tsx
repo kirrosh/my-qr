@@ -43,7 +43,7 @@ const WebCamera = () => {
             setCameraResult('');
             scannerRef.current?.stop();
         };
-    }, []);
+    }, [scannerRef.current]);
     return (
         <>
             <Block>
