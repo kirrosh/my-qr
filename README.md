@@ -14,6 +14,6 @@ Personally I use this app for any interaction with qr-codes.
 
 - Nextjs with [Next-pwa](https://github.com/shadowwalker/next-pwa)
 - Mobile ui with [Tailwind](https://tailwindcss.com/), tailwind-mobile [(Konsta)](https://github.com/konstaui/konsta), [Swiper](https://swiperjs.com/)
-- Best react state lib [Jotai](https://jotai.org/) with persistance in local storage
+- Best react state lib [Jotai](https://jotai.org/) with persistence in local storage
 - Analitics [Amplitude](https://github.com/amplitude/Amplitude-JavaScript), [Sentry](https://sentry.io/),
 - Some other libs for scan qr, camera, etc.
