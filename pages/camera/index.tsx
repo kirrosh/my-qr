@@ -1,8 +1,8 @@
-import React from 'react';
-import { WebCamera } from 'features/camera';
+import React from 'react'
+import { WebCamera } from 'features/camera'
 
 const Camera = () => {
-    return <WebCamera />;
-};
+  return <WebCamera />
+}
 
-export default Camera;
+export default Camera

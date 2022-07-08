@@ -1,8 +1,8 @@
-import React from 'react';
-import { AddForm } from 'features/form';
+import React from 'react'
+import { AddForm } from 'features/form'
 
 const Add = () => {
-    return <AddForm />;
-};
+  return <AddForm />
+}
 
-export default Add;
+export default Add
