@@ -1,5 +1,5 @@
 export enum ROUTES {
-    HOME = '/',
-    CAMERA = '/camera',
-    FORM = '/form'
+  HOME = '/',
+  CAMERA = '/camera',
+  FORM = '/form',
 }

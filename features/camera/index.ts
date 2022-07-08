@@ -1,1 +1,1 @@
-export { default as WebCamera } from './ui/WebCamera';
+export { default as WebCamera } from './ui/WebCamera'

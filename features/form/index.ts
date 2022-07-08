@@ -1,1 +1,1 @@
-export { default as AddForm } from './ui/Form';
+export { default as AddForm } from './ui/Form'
