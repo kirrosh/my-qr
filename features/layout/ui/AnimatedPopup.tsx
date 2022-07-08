@@ -3,7 +3,7 @@ import MetaData from 'features/MetaData'
 import { ROUTES } from 'lib/router'
 import { useRouter } from 'next/router'
 import { FC, PropsWithChildren } from 'react'
-import { Popup, Page, Navbar, Link } from 'tailwind-mobile/react'
+import { Popup, Page, Navbar, Link } from 'konsta/react'
 
 export const AnimatedPopup: FC<PropsWithChildren<{}>> = ({ children }) => {
   const { push, pathname } = useRouter()

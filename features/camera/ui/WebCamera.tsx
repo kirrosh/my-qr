@@ -5,7 +5,7 @@ import { useRouter } from 'next/dist/client/router'
 import QrScanner from 'qr-scanner'
 import React, { useEffect, useRef } from 'react'
 import { MdAdd, MdOpenInNew } from 'react-icons/md'
-import { Block, Fab } from 'tailwind-mobile/react'
+import { Block, Fab } from 'konsta/react'
 import isURL from 'validator/lib/isURL'
 
 const cameraResultAtom = atom('', (get, set, value) => {

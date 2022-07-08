@@ -9,9 +9,7 @@ import dynamic from 'next/dynamic'
 import MetaData from 'features/MetaData'
 
 //@ts-ignore
-const App = dynamic(() =>
-  import('tailwind-mobile/react').then((mod) => mod.App)
-)
+const App = dynamic(() => import('konsta/react').then((mod) => mod.App))
 //@ts-ignore
 const AnimatedPopup = dynamic(() =>
   import('features/layout').then((mod) => mod.AnimatedPopup)

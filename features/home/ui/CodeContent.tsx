@@ -1,6 +1,6 @@
 import React from 'react'
 import QRCode from 'qrcode.react'
-import { Button } from 'tailwind-mobile/react'
+import { Button } from 'konsta/react'
 import { MdModeEdit } from 'react-icons/md'
 import { useSetAtom } from 'jotai'
 import { codeInFormAtom, ICode } from '../../atoms'
@@ -45,7 +45,12 @@ const CodeContent = ({ code }: Props) => {
         <div className="flex gap-4">
           <DeleteCodeButton id={code.id} />
           <ShareCodeButton code={code} />
-          <Button onClick={onEditClick} className="bg-indigo-700 ">
+          <Button
+            onClick={onEditClick}
+            colors={{
+              bg: 'bg-indigo-700',
+            }}
+          >
             <MdModeEdit />
           </Button>
         </div>
