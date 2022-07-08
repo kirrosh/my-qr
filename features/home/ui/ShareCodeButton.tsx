@@ -31,6 +31,7 @@ const ShareCodeButton = ({ code }: Props) => {
       onClick={onShareClick}
       colors={{
         bg: 'bg-emerald-700',
+        activeBg: 'bg-emerald-700',
       }}
     >
       <MdShare />

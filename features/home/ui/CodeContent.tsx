@@ -45,12 +45,7 @@ const CodeContent = ({ code }: Props) => {
         <div className="flex gap-4">
           <DeleteCodeButton id={code.id} />
           <ShareCodeButton code={code} />
-          <Button
-            onClick={onEditClick}
-            colors={{
-              bg: 'bg-indigo-700',
-            }}
-          >
+          <Button onClick={onEditClick}>
             <MdModeEdit />
           </Button>
         </div>
