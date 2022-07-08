@@ -28,17 +28,9 @@ const DeleteCodeButton = ({ id }: Props) => {
     return () => timeout && clearTimeout(timeout)
   }, [sure])
   return (
-    <Button
-      onClick={onDeleteClick}
-      colors={{
-        border: 'border-red-500',
-        bg: 'bg-red-500',
-        activeBg: 'active:bg-red-500',
-        activeBgDark: 'active:bg-red-600',
-      }}
-    >
+    <Button onClick={onDeleteClick} className="bg-red-600">
       <MdDelete />
-      {sure ? ' ?' : ''}
+      {sure ? ' ???' : ''}
     </Button>
   )
 }

@@ -1,14 +1,21 @@
-import '../styles/globals.css'
+import 'styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
-import React, { FC, PropsWithChildren, useEffect, useState } from 'react'
-import { App, Link, Navbar, Page, Popup } from 'tailwind-mobile/react'
-import { initAmplitude } from '../lib/amplitude'
-import { initSentry } from '../lib/sentry'
-import { useRouter } from 'next/dist/client/router'
-import MetaData from 'features/MetaData'
-import { Home } from 'features/home'
+import React from 'react'
+import { initAmplitude } from 'lib/amplitude'
+import { initSentry } from 'lib/sentry'
 import { ROUTES } from 'lib/router'
+import dynamic from 'next/dynamic'
+import MetaData from 'features/MetaData'
+
+//@ts-ignore
+const App = dynamic(() =>
+  import('tailwind-mobile/react').then((mod) => mod.App)
+)
+//@ts-ignore
+const AnimatedPopup = dynamic(() =>
+  import('features/layout').then((mod) => mod.AnimatedPopup)
+)
 
 initSentry()
 
@@ -19,7 +26,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const { pathname } = router
 
   if (pathname === ROUTES.ABOUT) {
-    return <Component {...pageProps} />
+    return (
+      <>
+        <MetaData />
+        <Component {...pageProps} />
+      </>
+    )
   }
 
   return (
@@ -28,30 +40,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <Component {...pageProps} />
       </AnimatedPopup>
     </App>
-  )
-}
-
-const AnimatedPopup: FC<PropsWithChildren<{}>> = ({ children }) => {
-  const { push, pathname } = useRouter()
-  const show = pathname !== ROUTES.HOME
-
-  return (
-    <>
-      <MetaData />
-      <Home />
-      <Popup opened={show} onBackdropClick={() => push(ROUTES.HOME)}>
-        <Page>
-          <Navbar
-            right={
-              <Link navbar onClick={() => push(ROUTES.HOME)}>
-                Close
-              </Link>
-            }
-          />
-          {pathname !== ROUTES.HOME && children}
-        </Page>
-      </Popup>
-    </>
   )
 }
 

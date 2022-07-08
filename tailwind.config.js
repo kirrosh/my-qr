@@ -9,13 +9,16 @@ module.exports = tailwindMobile({
       colors: {
         'page-ios-light': '#efeff4',
         'page-ios-dark': '#212121',
-        primary: {
-          light: '#40916c',
-          DEFAULT: '#40916c',
-          dark: '#40916c',
-        },
         secondary: '#457b9d',
       },
+    },
+  },
+  extend: {
+    colors: {
+      'page-ios-light': '#efeff4',
+      'page-ios-dark': '#212121',
+
+      secondary: '#457b9d',
     },
   },
   variants: {
