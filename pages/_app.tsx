@@ -16,6 +16,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   React.useEffect(() => {
     initAmplitude()
   }, [])
+  const { pathname } = router
+
+  if (pathname === ROUTES.ABOUT) {
+    return <Component {...pageProps} />
+  }
 
   return (
     <App theme="ios" dark>
