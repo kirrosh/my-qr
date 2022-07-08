@@ -7,10 +7,10 @@ import { v4 } from 'uuid'
 import { codeInFormAtom, editCodeAtom, addCodeAtom } from 'features/atoms'
 
 const INACTIVE_BUTTON_COLORS = {
-  text: 'text-red-500',
-  border: 'border-red-500',
-  bg: 'bg-red-500',
-  activeBg: 'active:bg-red-500',
+  text: 'text-red-600',
+  border: 'border-red-600',
+  bg: 'bg-red-600',
+  activeBg: 'active:bg-red-600',
   activeBgDark: 'active:bg-red-600',
   touchRipple: 'touch-ripple-red-500',
 }

@@ -50,6 +50,7 @@ const Home: NextPage = () => {
         onClick={() => push(ROUTES.ABOUT)}
         colors={{
           bg: 'bg-emerald-700',
+          activeBg: 'bg-emerald-800',
         }}
       />
       <Fab
@@ -57,17 +58,11 @@ const Home: NextPage = () => {
         icon={<MdAdd />}
         text="Add"
         onClick={() => push(ROUTES.FORM)}
-        colors={{
-          bg: 'bg-indigo-700',
-        }}
       />
       <Fab
         icon={<MdCameraAlt />}
         className="fixed z-20 right-4-safe bottom-16-safe"
         onClick={() => push(ROUTES.CAMERA)}
-        colors={{
-          bg: 'bg-indigo-700',
-        }}
       />
     </Page>
   )
