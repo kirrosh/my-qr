@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, PropsWithChildren, useEffect, useState } from 'react'
 import { App, Link, Navbar, Page, Popup } from 'tailwind-mobile/react'
 import { initAmplitude } from '../lib/amplitude'
 import { initSentry } from '../lib/sentry'
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-const AnimatedPopup: FC = ({ children }) => {
+const AnimatedPopup: FC<PropsWithChildren<{}>> = ({ children }) => {
   const { push, pathname } = useRouter()
   const show = pathname !== ROUTES.HOME
 
