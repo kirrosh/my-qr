@@ -2,10 +2,10 @@ import React from 'react'
 import QRCode from 'qrcode.react'
 import { Button } from 'tailwind-mobile/react'
 import { MdModeEdit } from 'react-icons/md'
-import { useAtom } from 'jotai'
+import { useSetAtom } from 'jotai'
 import { codeInFormAtom, ICode } from '../../atoms'
 import DeleteCodeButton from './DeleteCodeButton'
-import ShareCodeButton from '../../form/ui/ShareCodeButton'
+import ShareCodeButton from './ShareCodeButton'
 import { useRouter } from 'next/dist/client/router'
 import { ROUTES } from 'lib/router'
 
@@ -16,7 +16,7 @@ type Props = {
 const DEFAULT_SIZE = 200
 
 const CodeContent = ({ code }: Props) => {
-  const [__, setCodeInForm] = useAtom(codeInFormAtom)
+  const setCodeInForm = useSetAtom(codeInFormAtom)
   const { push } = useRouter()
   const onEditClick = () => {
     push(ROUTES.FORM)
@@ -25,7 +25,9 @@ const CodeContent = ({ code }: Props) => {
   return (
     <div className="grid w-full place-items-center">
       <div className="grid gap-4 p-4 rounded-md">
-        <div className="grid text-3xl place-items-center">{code.title}</div>
+        <div className="grid text-3xl text-gray-100 place-items-center">
+          {code.title}
+        </div>
         <div
           style={{
             width: DEFAULT_SIZE,
@@ -37,13 +39,13 @@ const CodeContent = ({ code }: Props) => {
             level="Q"
             size={DEFAULT_SIZE}
             bgColor="#212121"
-            fgColor="#efeff4"
+            fgColor="#ffffff"
           />
         </div>
         <div className="flex gap-4">
           <DeleteCodeButton id={code.id} />
           <ShareCodeButton code={code} />
-          <Button onClick={onEditClick}>
+          <Button onClick={onEditClick} className="bg-indigo-700 ">
             <MdModeEdit />
           </Button>
         </div>

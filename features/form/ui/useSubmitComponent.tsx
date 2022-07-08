@@ -4,7 +4,7 @@ import { useRouter } from 'next/dist/client/router'
 import React from 'react'
 import { Button } from 'tailwind-mobile/react'
 import { v4 } from 'uuid'
-import { codeInFormAtom, editCodeAtom, addCodeAtom } from '../../atoms'
+import { codeInFormAtom, editCodeAtom, addCodeAtom } from 'features/atoms'
 
 const INACTIVE_BUTTON_COLORS = {
   text: 'text-red-500',
