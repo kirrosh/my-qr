@@ -1,6 +1,6 @@
 import { useAtom, useSetAtom } from 'jotai'
 import React, { useEffect } from 'react'
-import { Block, List, ListButton, ListInput } from 'tailwind-mobile/react'
+import { Block, List, ListButton, ListInput } from 'konsta/react'
 import { codeInFormAtom, setSrcAtom, setTitleAtom } from 'features/atoms'
 import QRCodeFileUpload from './QRCodeFileUpload'
 import QRCode from 'qrcode.react'

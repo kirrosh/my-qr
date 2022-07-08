@@ -1,7 +1,7 @@
 import QrScanner from 'qr-scanner'
 import React, { useRef } from 'react'
 import { MdQrCodeScanner } from 'react-icons/md'
-import { ListButton } from 'tailwind-mobile/react'
+import { ListButton } from 'konsta/react'
 type Props = {
   src: string
   setSrc: (src: string) => void

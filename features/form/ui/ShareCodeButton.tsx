@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdShare } from 'react-icons/md'
-import { Button } from 'tailwind-mobile/react'
+import { Button } from 'konsta/react'
 import { AMPLITUDE_EVENTS, logEvent } from 'lib/amplitude'
 import { ICode } from 'features/atoms'
 import isURL from 'validator/lib/isURL'

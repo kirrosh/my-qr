@@ -1,7 +1,7 @@
 import { useAtom } from 'jotai'
 import React, { useEffect, useState } from 'react'
 import { MdDelete } from 'react-icons/md'
-import { Button } from 'tailwind-mobile/react'
+import { Button } from 'konsta/react'
 import { deleteCodeAtom } from '../../atoms'
 
 type Props = {
@@ -28,7 +28,12 @@ const DeleteCodeButton = ({ id }: Props) => {
     return () => timeout && clearTimeout(timeout)
   }, [sure])
   return (
-    <Button onClick={onDeleteClick} className="bg-red-600">
+    <Button
+      onClick={onDeleteClick}
+      colors={{
+        bg: 'bg-red-600',
+      }}
+    >
       <MdDelete />
       {sure ? ' ???' : ''}
     </Button>

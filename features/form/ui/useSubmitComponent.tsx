@@ -2,7 +2,7 @@ import { useAtom } from 'jotai'
 import { ROUTES } from 'lib/router'
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
-import { Button } from 'tailwind-mobile/react'
+import { Button } from 'konsta/react'
 import { v4 } from 'uuid'
 import { codeInFormAtom, editCodeAtom, addCodeAtom } from 'features/atoms'
 

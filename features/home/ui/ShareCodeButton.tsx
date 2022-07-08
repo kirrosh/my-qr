@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdShare } from 'react-icons/md'
-import { Button } from 'tailwind-mobile/react'
+import { Button } from 'konsta/react'
 import { AMPLITUDE_EVENTS, logEvent } from '../../../lib/amplitude'
 import { ICode } from '../../atoms'
 import isURL from 'validator/lib/isURL'
@@ -27,7 +27,12 @@ const ShareCodeButton = ({ code }: Props) => {
   }
 
   return (
-    <Button onClick={onShareClick} className="bg-emerald-700">
+    <Button
+      onClick={onShareClick}
+      colors={{
+        bg: 'bg-emerald-700',
+      }}
+    >
       <MdShare />
     </Button>
   )

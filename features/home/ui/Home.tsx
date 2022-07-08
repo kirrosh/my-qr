@@ -6,7 +6,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import React from 'react'
-import { Page, Fab } from 'tailwind-mobile/react'
+import { Page, Fab } from 'konsta/react'
 import { useAtom } from 'jotai'
 import { MdAdd, MdCameraAlt, MdInfo } from 'react-icons/md'
 import { Pagination } from 'swiper'
@@ -45,20 +45,29 @@ const Home: NextPage = () => {
         <Footer />
       </div>
       <Fab
-        className="fixed z-20 bg-emerald-700 left-4-safe bottom-16-safe"
+        className="fixed z-20 left-4-safe bottom-16-safe"
         icon={<MdInfo />}
         onClick={() => push(ROUTES.ABOUT)}
+        colors={{
+          bg: 'bg-emerald-700',
+        }}
       />
       <Fab
-        className="fixed z-20 transform -translate-x-1/2 bg-indigo-700 left-1/2 bottom-16-safe"
+        className="fixed z-20 transform -translate-x-1/2 left-1/2 bottom-16-safe"
         icon={<MdAdd />}
         text="Add"
         onClick={() => push(ROUTES.FORM)}
+        colors={{
+          bg: 'bg-indigo-700',
+        }}
       />
       <Fab
         icon={<MdCameraAlt />}
-        className="fixed z-20 bg-indigo-700 right-4-safe bottom-16-safe"
+        className="fixed z-20 right-4-safe bottom-16-safe"
         onClick={() => push(ROUTES.CAMERA)}
+        colors={{
+          bg: 'bg-indigo-700',
+        }}
       />
     </Page>
   )

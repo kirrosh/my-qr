@@ -16,6 +16,7 @@ specifiers:
   eslint: ^8.19.0
   eslint-config-next: ^12.2.1
   jotai: ^1.7.3
+  konsta: ^0.11.0
   next: ^12.2.1
   next-pwa: ^5.4.4
   postcss: ^8.4.14
@@ -26,7 +27,6 @@ specifiers:
   react-dom: ^18.2.0
   react-icons: ^4.4.0
   swiper: ^8.3.0
-  tailwind-mobile: ^0.6.0
   tailwindcss: ^3.1.5
   typescript: ^4.7.4
   uuid: ^8.3.2
@@ -39,6 +39,7 @@ dependencies:
   '@sentry/tracing': 7.5.1
   amplitude-js: 8.18.5
   jotai: 1.7.3_react@17.0.2
+  konsta: 0.11.0
   next: 12.1.5_sfoxds7t5ydpegc3knd667wn6m
   next-pwa: 5.5.4_next@12.1.5
   qr-scanner: 1.4.1
@@ -48,7 +49,6 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.4.0_react@17.0.2
   swiper: 8.3.0
-  tailwind-mobile: 0.6.0
   uuid: 8.3.2
   validator: 13.7.0
 
@@ -3424,6 +3424,11 @@ packages:
       object.assign: 4.1.2
     dev: true
 
+  /konsta/0.11.0:
+    resolution: {integrity: sha512-BgMu2ZQ7BvYKDXEXFqbdgMbKcCxG1qeiEx9eZoe4irb5FhbggqmNZtn57kq1nKgE8kTkmAydr3HMDGynug0P8w==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
+
   /language-subtag-registry/0.3.22:
     resolution: {integrity: sha512-tN0MCzyWnoz/4nHS6uxdlFWoUZT7ABptwKPQ52Ea7URk6vll88bWBVhodtnlfEuCcKWNGoc+uGbw1cwa9IKh/w==}
     dev: true
@@ -4409,11 +4414,6 @@ packages:
     dependencies:
       dom7: 4.0.4
       ssr-window: 4.0.2
-    dev: false
-
-  /tailwind-mobile/0.6.0:
-    resolution: {integrity: sha512-tCzGQp0Uxfi2YTYFhsLbTM2LaggIM+p+3NYLbWWJyDdbJat8wi85MfsANzn+dLU+W73IWdnWgLyrdOUMSSzrNA==}
-    engines: {node: '>= 4.7.0'}
     dev: false
 
   /tailwindcss/3.1.5:
