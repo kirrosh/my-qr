@@ -1,4 +1,4 @@
-import { useAtom } from 'jotai'
+import { useAtom, useSetAtom } from 'jotai'
 import { ROUTES } from 'lib/router'
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
@@ -17,8 +17,8 @@ const INACTIVE_BUTTON_COLORS = {
 
 export const useSubmitComponent = () => {
   const [code] = useAtom(codeInFormAtom)
-  const [_, editCode] = useAtom(editCodeAtom)
-  const [__, addCode] = useAtom(addCodeAtom)
+  const editCode = useSetAtom(editCodeAtom)
+  const addCode = useSetAtom(addCodeAtom)
   const { push } = useRouter()
   const disabled = !(code?.src && code.title)
   if (code?.id) {
