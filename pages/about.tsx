@@ -13,8 +13,8 @@ export default function About() {
               <span className="block text-primary xl:inline">QR codes</span>
             </h1>
             <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Don't need to install anything to scan QR codes. Just use your
-              camera with this website. Go to the App and save it to your{' '}
+              Don&apos;t need to install anything to scan QR codes. Just use
+              your camera with this website. Go to the App and save it to your{' '}
               <b className="text-primary">home screen</b> and you can scan QR
               codes anytime offline.
             </p>
@@ -22,7 +22,7 @@ export default function About() {
               <div className="rounded-md shadow">
                 <Link href="/">
                   <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white border border-transparent rounded-md bg-primary hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
-                    Scan!
+                    Open
                   </a>
                 </Link>
               </div>
