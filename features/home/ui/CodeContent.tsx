@@ -11,20 +11,22 @@ import { ROUTES } from 'lib/router'
 
 type Props = {
   code: ICode
+  demo?: boolean
 }
 
 const DEFAULT_SIZE = 200
 
-const CodeContent = ({ code }: Props) => {
+const CodeContent = ({ code, demo }: Props) => {
   const setCodeInForm = useSetAtom(codeInFormAtom)
   const { push } = useRouter()
   const onEditClick = () => {
+    if (demo) return
     push(ROUTES.FORM)
     setCodeInForm(code)
   }
   return (
     <div className="grid w-full place-items-center">
-      <div className="grid gap-4 p-4 rounded-md">
+      <div className="grid gap-4 p-4 rounded-md justify-items-center">
         <div className="grid text-3xl text-gray-100 place-items-center">
           {code.title}
         </div>
@@ -42,8 +44,8 @@ const CodeContent = ({ code }: Props) => {
             fgColor="#ffffff"
           />
         </div>
-        <div className="flex gap-4">
-          <DeleteCodeButton id={code.id} />
+        <div className="flex w-full gap-4">
+          <DeleteCodeButton id={code.id} disabled={demo} />
           <ShareCodeButton code={code} />
           <Button onClick={onEditClick}>
             <MdModeEdit />

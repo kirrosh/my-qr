@@ -21,5 +21,5 @@ module.exports = konstaConfig({
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 })

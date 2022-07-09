@@ -6,12 +6,14 @@ import { deleteCodeAtom } from '../../atoms'
 
 type Props = {
   id: string
+  disabled?: boolean
 }
 
-const DeleteCodeButton = ({ id }: Props) => {
+const DeleteCodeButton = ({ id, disabled }: Props) => {
   const [_, deleteCode] = useAtom(deleteCodeAtom)
   const [sure, setSure] = useState(false)
   const onDeleteClick = () => {
+    if (disabled) return
     if (!sure) {
       setSure(true)
     } else {
@@ -33,6 +35,7 @@ const DeleteCodeButton = ({ id }: Props) => {
       colors={{
         bg: 'bg-red-600',
         activeBg: 'bg-red-700',
+        activeBgDark: 'bg-red-700',
       }}
     >
       <MdDelete />
