@@ -3,11 +3,16 @@ import React, { useEffect } from 'react'
 import { Block, List, ListButton, ListInput } from 'konsta/react'
 import { codeInFormAtom, setSrcAtom, setTitleAtom } from 'features/atoms'
 import QRCodeFileUpload from './QRCodeFileUpload'
-import QRCode from 'qrcode.react'
+// import QRCode from 'qrcode.react'
 import { MdCameraAlt } from 'react-icons/md'
 import { useSubmitComponent } from './useSubmitComponent'
 import { useRouter } from 'next/dist/client/router'
 import { ROUTES } from 'lib/router'
+import dynamic from 'next/dynamic'
+
+const QRCode = dynamic(() =>
+  import('qrcode.react')
+)
 
 const AddForm = () => {
   const [url, setUrl] = useAtom(setSrcAtom)

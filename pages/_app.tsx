@@ -1,7 +1,7 @@
 import 'styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { initAmplitude } from 'lib/amplitude'
 import { initSentry } from 'lib/sentry'
 import { ROUTES } from 'lib/router'
@@ -10,9 +10,9 @@ import MetaData from 'features/MetaData'
 
 //@ts-ignore
 const App = dynamic(() => import('konsta/react').then((mod) => mod.App))
-//@ts-ignore
-const AnimatedPopup = dynamic(() =>
-  import('features/layout').then((mod) => mod.AnimatedPopup)
+
+const AnimatedPopup = dynamic<PropsWithChildren>(() =>
+  import('features/layout/ui/AnimatedPopup')
 )
 
 initSentry()
