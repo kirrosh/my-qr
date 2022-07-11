@@ -5,8 +5,8 @@ import Link from 'next/link'
 export default function About() {
   return (
     <div className="relative flex flex-col justify-between min-h-screen overflow-hidden bg-page-ios-dark">
-      <div className="relative grid flex-1 pt-6 pb-16 sm:pb-24 place-items-center">
-        <main className="flex flex-col gap-16 px-4 mx-auto mt-16 max-w-7xl sm:mt-24 md:flex-row">
+      <div className="relative flex flex-1 pt-6 pb-16 sm:pb-24">
+        <main className="flex flex-col w-full gap-16 px-4 mx-auto mt-16 max-w-7xl sm:mt-24 md:flex-row">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-100 sm:text-5xl md:text-6xl">
               <span className="block xl:inline">Scan and save any</span>{' '}
