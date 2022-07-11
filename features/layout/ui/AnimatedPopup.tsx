@@ -28,3 +28,5 @@ export const AnimatedPopup: FC<PropsWithChildren<{}>> = ({ children }) => {
     </>
   )
 }
+
+export default AnimatedPopup

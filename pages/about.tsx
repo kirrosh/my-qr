@@ -1,5 +1,5 @@
-import { CodeContent } from 'features/home'
-import { Footer } from 'features/layout'
+import CodeContent from 'features/home/ui/CodeContent'
+import { Footer } from 'features/layout/ui/Footer'
 import Link from 'next/link'
 
 export default function About() {
