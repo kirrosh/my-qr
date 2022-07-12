@@ -38,8 +38,8 @@ export default function About() {
                       <CodeContent
                         demo
                         code={{
-                          id: 'my-qr-app',
-                          src: 'https://my-qr.vercel.app/',
+                          id: 'my-qr.su',
+                          src: 'https://www.my-qr.su/',
                           title: 'My QR',
                         }}
                       />
