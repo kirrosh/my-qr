@@ -1,6 +1,6 @@
 export enum ROUTES {
-  HOME = '/',
+  APP = '/app',
   CAMERA = '/camera',
   FORM = '/form',
-  ABOUT = '/about',
+  HOME = '/',
 }

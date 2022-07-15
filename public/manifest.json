@@ -3,7 +3,7 @@
   "short_name": "My QR",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
-  "start_url": "/",
+  "start_url": "/app",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [

@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       <Fab
         className="fixed z-20 left-4-safe bottom-16-safe"
         icon={<MdInfo />}
-        onClick={() => push(ROUTES.ABOUT)}
+        onClick={() => push(ROUTES.HOME)}
         colors={{
           bg: 'bg-emerald-700',
           activeBg: 'bg-emerald-800',
