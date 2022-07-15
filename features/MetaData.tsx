@@ -98,7 +98,7 @@ const MetaData = () => {
       />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content="https://my-qr.vercel.app" />
+      <meta name="twitter:url" content="https://www.my-qr.su" />
       <meta name="twitter:title" content="My QR" />
       <meta name="twitter:description" content="Fast access to QR code" />
       <meta name="twitter:image" content="/icons/myqr.png" />
@@ -107,7 +107,7 @@ const MetaData = () => {
       <meta property="og:title" content="My QR" />
       <meta property="og:description" content="Fast access to QR code" />
       <meta property="og:site_name" content="My QR" />
-      <meta property="og:url" content="https://my-qr.vercel.app" />
+      <meta property="og:url" content="https://www.my-qr.su" />
       <meta property="og:image" content="/icons/myqr.png" />
     </Head>
   )

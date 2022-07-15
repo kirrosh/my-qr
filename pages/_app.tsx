@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }, [])
   const { pathname } = router
 
-  if (pathname === ROUTES.ABOUT) {
+  if (pathname === ROUTES.HOME) {
     return (
       <>
         <MetaData />

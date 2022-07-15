@@ -31,7 +31,7 @@ export const useSubmitComponent = () => {
         title: code.title || '',
         id: code.id || '',
       })
-      push(ROUTES.HOME)
+      push(ROUTES.APP)
     }
     return (
       <Button
@@ -52,7 +52,7 @@ export const useSubmitComponent = () => {
       src: code?.src || '',
       id: v4(),
     })
-    push(ROUTES.HOME)
+    push(ROUTES.APP)
   }
   return (
     <Button

@@ -7,22 +7,22 @@ import { Popup, Page, Navbar, Link } from 'konsta/react'
 
 export const AnimatedPopup: FC<PropsWithChildren<{}>> = ({ children }) => {
   const { push, pathname } = useRouter()
-  const show = pathname !== ROUTES.HOME
+  const show = pathname !== ROUTES.APP
 
   return (
     <>
       <MetaData />
       <Home />
-      <Popup opened={show} onBackdropClick={() => push(ROUTES.HOME)}>
+      <Popup opened={show} onBackdropClick={() => push(ROUTES.APP)}>
         <Page>
           <Navbar
             right={
-              <Link navbar onClick={() => push(ROUTES.HOME)}>
+              <Link navbar onClick={() => push(ROUTES.APP)}>
                 Close
               </Link>
             }
           />
-          {pathname !== ROUTES.HOME && children}
+          {pathname !== ROUTES.APP && children}
         </Page>
       </Popup>
     </>
